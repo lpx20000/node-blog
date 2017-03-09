@@ -1,0 +1,14 @@
+<%- include header.html %>
+<% if(user && (user.name == post.name)) {%>
+<p>
+    <span><a class="edit" href="/post/edit/<%= post.id %>">编辑</a></span>
+    <span><a class="edit" href="/post/remove/<%= post.id %>">删除</a></span>
+</p>
+<% } %>
+<p><h2><a href="/posts/<%= post.name %>"><%= post.title %></a></h2></p>
+<p class="info">
+    作者：<a href="/posts/<%= post.name %>"><%= post.name %></a>
+    日期：<%= post.time %>
+</p>
+<p><%- post.post%></p>
+<%- include footer.html %>
